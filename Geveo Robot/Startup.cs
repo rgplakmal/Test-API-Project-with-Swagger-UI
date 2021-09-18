@@ -1,3 +1,4 @@
+using Geveo_Robot.DependencyResolution;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,13 +16,19 @@ namespace Geveo_Robot
 {
     public class Startup
     {
+        #region Private Declarations
+        public IConfiguration Configuration { get; }
+        #endregion Private Declarations
+
+
+        #region Constructor
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
+        #endregion Constructor
 
-        public IConfiguration Configuration { get; }
-
+        #region Configure methods
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -29,6 +36,10 @@ namespace Geveo_Robot
 
             // Register the Swagger generator
             services.AddSwaggerGen();
+
+            #region Dependency Resolution
+            services.RegisterServices();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,5 +72,6 @@ namespace Geveo_Robot
                 endpoints.MapControllers();
             });
         }
+        #endregion Configure methods
     }
 }

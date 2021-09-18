@@ -21,13 +21,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "301 Robot", "301 Robot", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0400 General", "0400 General", "{CE7C8F9C-331F-4A71-9FBD-1BD97AE1762E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "301_01 API", "301_01 API", "{5E8C8370-22C5-41A4-B516-51CE90027E57}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "301_02 API", "301_02 API", "{5E8C8370-22C5-41A4-B516-51CE90027E57}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geveo.Modules.Robot.DTOs", "Geveo.Modules.Robot.DTOs\Geveo.Modules.Robot.DTOs.csproj", "{1B156612-D1A9-49CD-911F-CEB2ABAA17DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0201 ExceptionManagement", "0201 ExceptionManagement", "{5EC96EE5-18D6-40E5-B8D0-88F34145357B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geveo.Utilities.Exception.ViewModels", "Geveo.Modules.Robot.Utilities.Exception.ViewModels\Geveo.Utilities.Exception.ViewModels.csproj", "{3AE77424-2214-438B-A715-FDEA809C5AF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geveo.Utilities.Exception.ViewModels", "Geveo.Modules.Robot.Utilities.Exception.ViewModels\Geveo.Utilities.Exception.ViewModels.csproj", "{3AE77424-2214-438B-A715-FDEA809C5AF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "301_01 Business", "301_01 Business", "{C8866EBF-6F80-4999-A903-2CEC192623AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geveo.Modules.Robot.ViewModels", "Geveo.Modules.Robot.ViewModels\Geveo.Modules.Robot.ViewModels.csproj", "{926DFFEE-7991-45E1-8EC2-F6FE9DEDF5C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geveo.Modules.Robot.Core", "Geveo.Modules.Robot.Core\Geveo.Modules.Robot.Core.csproj", "{8CA804A9-D00E-495C-963B-FF99D8BB1C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geveo.Modules.Robot.Services", "Geveo.Modules.Robot.Services\Geveo.Modules.Robot.Services.csproj", "{8D4699E7-AB5B-4955-BCC2-F080F4F9931A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +59,18 @@ Global
 		{3AE77424-2214-438B-A715-FDEA809C5AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AE77424-2214-438B-A715-FDEA809C5AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AE77424-2214-438B-A715-FDEA809C5AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926DFFEE-7991-45E1-8EC2-F6FE9DEDF5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926DFFEE-7991-45E1-8EC2-F6FE9DEDF5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926DFFEE-7991-45E1-8EC2-F6FE9DEDF5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926DFFEE-7991-45E1-8EC2-F6FE9DEDF5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA804A9-D00E-495C-963B-FF99D8BB1C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA804A9-D00E-495C-963B-FF99D8BB1C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA804A9-D00E-495C-963B-FF99D8BB1C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA804A9-D00E-495C-963B-FF99D8BB1C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4699E7-AB5B-4955-BCC2-F080F4F9931A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4699E7-AB5B-4955-BCC2-F080F4F9931A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4699E7-AB5B-4955-BCC2-F080F4F9931A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4699E7-AB5B-4955-BCC2-F080F4F9931A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +85,10 @@ Global
 		{1B156612-D1A9-49CD-911F-CEB2ABAA17DD} = {5E8C8370-22C5-41A4-B516-51CE90027E57}
 		{5EC96EE5-18D6-40E5-B8D0-88F34145357B} = {BEF7C284-BE16-43B5-A930-50B558C3B555}
 		{3AE77424-2214-438B-A715-FDEA809C5AF5} = {5EC96EE5-18D6-40E5-B8D0-88F34145357B}
+		{C8866EBF-6F80-4999-A903-2CEC192623AE} = {F7B56B7A-8655-48D1-B62F-7D5F1188FEC7}
+		{926DFFEE-7991-45E1-8EC2-F6FE9DEDF5C1} = {C8866EBF-6F80-4999-A903-2CEC192623AE}
+		{8CA804A9-D00E-495C-963B-FF99D8BB1C56} = {C8866EBF-6F80-4999-A903-2CEC192623AE}
+		{8D4699E7-AB5B-4955-BCC2-F080F4F9931A} = {C8866EBF-6F80-4999-A903-2CEC192623AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EE60896-3EE6-4C01-82C3-C01C871CDEEF}

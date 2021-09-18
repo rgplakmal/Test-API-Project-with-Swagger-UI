@@ -1,4 +1,6 @@
-﻿using Geveo.Modules.Robot.DTOs.TestData;
+﻿using Geveo.Modules.Robot.Base.Common;
+using Geveo.Modules.Robot.Core.Services;
+using Geveo.Modules.Robot.DTOs.TestData;
 using Geveo.Utilities.Exception.ViewModels.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +19,7 @@ namespace Geveo.Modules.Robot.WebAPI.Controllers
     {
         #region Private Declarations
 
-        //private readonly ICreditApprovalService _creditApprovalService;
+        private readonly IRobotService _robotService;
         private readonly ILogger<RobotController> _logger;
         //private readonly IMapper _mapper;
         //private readonly IAuthorizationAttributesService _authSvc;
@@ -26,38 +28,52 @@ namespace Geveo.Modules.Robot.WebAPI.Controllers
 
         #region Constructor
 
-        ///// <summary>
-        ///// Credit Common - Controller
-        ///// </summary>
-        ///// <param name="creditApprovalService">Business Lead Management service DI</param>
-        ///// <param name="logger"></param>
-        ///// <param name="mapper"></param>
-        ///// <param name="authSvc">IAuthorizationAttributesService</param>
-        //public CreditApprovalController(ICreditApprovalService creditApprovalService, ILogger<CreditApprovalController> logger, IMapper mapper, IAuthorizationAttributesService authSvc)
-        //{
-        //    _creditApprovalService = creditApprovalService;
-        //    _logger = logger;
-        //    _mapper = mapper;
-        //    _authSvc = authSvc;
-        //}
+        /// <summary>
+        /// Credit Common - Controller
+        /// </summary>
+        /// <param name="robotService">Business Lead Management service DI</param>
+        /// <param name="logger"></param>
+        public RobotController(IRobotService robotService, ILogger<RobotController> logger)
+        {
+            _robotService = robotService;
+            _logger = logger;
+        }
         #endregion
 
         #region Task
         /// <summary>
-        /// Get Aplication Creation Approval Data By Credit Account Lead Reference No - Async
+        /// Test Api - Async
+        /// </summary>
+        /// <param></param>
+        /// <returns>TestResponse</returns>
+        [HttpGet(Name = "TestApiAsync")]
+        public async Task<TestResponse> TestApiAsync()
+        {
+            TestResponse testResponse = new TestResponse();
+            try
+            {
+                testResponse.Message = await _robotService.TestApiAsync();
+                testResponse.IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                throw new GeveoException(ex, testResponse);
+            }
+            return testResponse;
+        }
+
+        /// <summary>
+        /// Get Test Data - Async
         /// </summary>
         /// <param name="param"></param>
-        /// <returns></returns>
-        [HttpGet("{param}", Name = "GetAplicationDataAsync")]
-        public async Task<TestDataResponse> GetAplicationDataAsync(string param)
+        /// <returns>TestDataResponse</returns>
+        [HttpGet("{param}", Name = "GetTestDataAsync")]
+        public async Task<TestDataResponse> GetTestDataAsync(string param)
         {
             TestDataResponse testDataResponse = new TestDataResponse();
             try
             {
-                //var userId = _authSvc.UserId;
-                //var agentId = _authSvc.AgentId;
-                testDataResponse.Number = 10;
-                //testDataResponse.ApplicationCreationApprovalData = await _creditApprovalService.GetAplicationCreationApprovalDataByCreditAccountLeadReferenceNoAsync(creditAccountLeadReferenceNo, currentTab, userId, agentId);
+                testDataResponse.TestVM = await _robotService.GetTestDataAsync(param);
                 testDataResponse.IsSuccess = true;
             }
             catch (Exception ex)

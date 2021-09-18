@@ -7,8 +7,8 @@ using System.Text;
 namespace Geveo.Modules.Robot.DTOs.TestData
 {
 
-    public class TestDataResponse : BaseResponse
+    public class TestResponse : BaseResponse
     {
-        public TestVM TestVM { get; set; }
+        public string Message { get; set; }
     }
 }
