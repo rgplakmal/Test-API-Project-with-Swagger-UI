@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Geveo_Robot</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.3" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Geveo.Modules.Robot.Base.Common\Geveo.Modules.Robot.Base.Common.DTOs.csproj" />
+    <ProjectReference Include="..\Geveo.Modules.Robot.DTOs\Geveo.Modules.Robot.DTOs.csproj" />
+    <ProjectReference Include="..\Geveo.Modules.Robot.Utilities.Exception.ViewModels\Geveo.Utilities.Exception.ViewModels.csproj" />
+  </ItemGroup>
+
+
+</Project>
